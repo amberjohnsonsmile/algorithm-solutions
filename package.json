@@ -4,7 +4,7 @@
   "description": "Solutions to common algorithm questions.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test --recursive"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/amberjohnsonsmile/algorithm-solutions/issues"
   },
-  "homepage": "https://github.com/amberjohnsonsmile/algorithm-solutions#readme"
+  "homepage": "https://github.com/amberjohnsonsmile/algorithm-solutions#readme",
+  "devDependencies": {
+    "mocha": "^11.1.0"
+  },
+  "type": "module"
 }

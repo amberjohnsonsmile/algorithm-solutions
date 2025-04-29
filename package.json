@@ -1,0 +1,19 @@
+{
+  "name": "algorithm-solutions",
+  "version": "1.0.0",
+  "description": "Solutions to common algorithm questions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amberjohnsonsmile/algorithm-solutions.git"
+  },
+  "author": "Amber Johnson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amberjohnsonsmile/algorithm-solutions/issues"
+  },
+  "homepage": "https://github.com/amberjohnsonsmile/algorithm-solutions#readme"
+}

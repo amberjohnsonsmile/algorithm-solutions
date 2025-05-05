@@ -1,34 +1,27 @@
 // Write a function mergeRanges() that takes an array of multiple meeting time ranges and returns an array of condensed ranges
 // Start time and end time don't have an upper bound
 export function mergeRanges(ranges) {
-  let condensedRanges = ranges[0]
-
   // TODO implement custom method for sorting
   const sortedRanges = ranges.sort((a, b) => a.startTime - b.startTime)
-  console.log('sorted: ', sortedRanges)
+  let condensedRanges = [sortedRanges[0]]
 
-  // Two at a time, see if there's overlap
-  // Compare current item to last item in solution
-  for (let i = 1; i < ranges.length; i++) {
-    const last = sortedRanges[sortedRanges.length - 1]
-    const current = ranges[i]
+  // Compare current to last in condensedRanges
+  for (let i = 1; i < sortedRanges.length; i++) {
+    const last = condensedRanges[condensedRanges.length - 1]
+    const current = sortedRanges[i]
 
-    // Instead of comparing current and next, add first to solution then compare current to last added to solution
-    // If there's overlap
-    if (last.endTime < current.startTime) {
-      condensedRanges.push({
-        startTime: current.startTime,
-        // Do I need this max?
-        endTime: Math.max(current.endTime, next.endTime)
-      })
+    // Check for overlap
+    if (current.startTime < last.endTime) {
+      condensedRanges[condensedRanges.length - 1] = {
+        // TODO - are min and max necessary here?
+        startTime: Math.min(last.startTime, current.startTime),
+        endTime: Math.max(last.endTime, current.endTime)
+      }
     } else {
-      // If not add both
+      // If no overlap, add the current item to the array
       condensedRanges.push(current)
     }
-    // What if three in a row overlap?
-    // What if one is completely within the other?
   }
-  console.log('condensed ranges are: ', condensedRanges)
   return condensedRanges
 }
 

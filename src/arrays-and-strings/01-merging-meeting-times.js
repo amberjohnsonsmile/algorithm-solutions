@@ -1,8 +1,8 @@
 // Write a function mergeRanges() that takes an array of multiple meeting time ranges and returns an array of condensed ranges
 // Start time and end time don't have an upper bound
 export function mergeRanges(ranges) {
-  // TODO implement custom method for sorting
   const sortedRanges = ranges.sort((a, b) => a.startTime - b.startTime)
+  // const sortedRanges = mergeSort(ranges)
   let condensedRanges = [sortedRanges[0]]
 
   // Compare current to last in condensedRanges
@@ -22,4 +22,29 @@ export function mergeRanges(ranges) {
     }
   }
   return condensedRanges
+}
+
+function mergeSort(ranges) {
+  if (ranges.length <= 1) return ranges
+  let middle = Math.floor(ranges.length / 2)
+
+  // Recursively run mergeSort
+  let left = mergeSort(ranges.slice(0, middle))
+  let right = mergeSort(ranges.slice(middle))
+
+  return mergeByStartTime(left, right)
+}
+
+function mergeByStartTime(left, right) {
+  let sorted = []
+
+  while (left.length && right.lenght) {
+    if (left[0].startTime < right[0].startTime) {
+      sorted.push(left.shift())
+    } else {
+      sorted.push(right.shift())
+    }
+  }
+
+  return sorted
 }

@@ -13,39 +13,13 @@ export function mergeRanges(ranges) {
     // Check for overlap
     if (current.startTime <= last.endTime) {
       condensedRanges[condensedRanges.length - 1] = {
-        // TODO - are min and max necessary here?
-        startTime: Math.min(last.startTime, current.startTime),
+        startTime: last.startTime,
         endTime: Math.max(last.endTime, current.endTime)
       }
     } else {
-      // If no overlap, add the current item to the array
+      // If no overlap, add current
       condensedRanges.push(current)
     }
   }
   return condensedRanges
 }
-
-// Input:
-// [
-//   { startTime: 0,  endTime: 1 },
-//   { startTime: 3,  endTime: 5 },
-//   { startTime: 4,  endTime: 8 },
-//   { startTime: 10, endTime: 12 },
-//   { startTime: 9,  endTime: 10 },
-// ]
-
-// Sorted:
-// [
-//   { startTime: 0,  endTime: 1 },
-//   { startTime: 3,  endTime: 5 },
-//   { startTime: 4,  endTime: 8 },
-//   { startTime: 9,  endTime: 10 },
-//   { startTime: 10, endTime: 12 },
-// ]
-
-// Output:
-// [
-//   { startTime: 0, endTime: 1 },
-//   { startTime: 3, endTime: 8 },
-//   { startTime: 9, endTime: 12 },
-// ]

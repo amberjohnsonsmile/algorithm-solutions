@@ -11,7 +11,7 @@ export function mergeRanges(ranges) {
     const current = sortedRanges[i]
 
     // Check for overlap
-    if (current.startTime < last.endTime) {
+    if (current.startTime <= last.endTime) {
       condensedRanges[condensedRanges.length - 1] = {
         // TODO - are min and max necessary here?
         startTime: Math.min(last.startTime, current.startTime),

@@ -17,10 +17,16 @@ describe('reverseCharacters', function () {
   })
 
   it('should handle an odd number of items', () => {
-    assert.deepEqual(0, 1)
+    const input = ['k', 'i', 't', 't', 'e', 'n', 's']
+    const expected = ['s', 'n', 'e', 't', 't', 'i', 'k']
+    const result = reverseCharacters(input)
+    assert.deepEqual(result, expected)
   })
 
   it('should handle an empty array', () => {
-    assert.deepEqual(0, 1)
+    const input = []
+    const expected = []
+    const result = reverseCharacters(input)
+    assert.deepEqual(result, expected)
   })
 })

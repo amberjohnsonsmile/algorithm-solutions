@@ -5,14 +5,22 @@ describe('reverseCharacters', function () {
   it('should return a reversed array of characters', () => {
     const input = ['k', 'i', 't', 't', 'e', 'n']
     const expected = ['n', 'e', 't', 't', 'i', 'k']
-
     const result = reverseCharacters(input)
     assert.deepEqual(result, expected)
   })
 
-  it('should handle a single item', () => {})
+  it('should handle a single item', () => {
+    const input = ['a']
+    const expected = ['a']
+    const result = reverseCharacters(input)
+    assert.deepEqual(result, expected)
+  })
 
-  it('should handle an odd number of items', () => {})
+  it('should handle an odd number of items', () => {
+    assert.deepEqual(0, 1)
+  })
 
-  it('should handle an empty array', () => {})
+  it('should handle an empty array', () => {
+    assert.deepEqual(0, 1)
+  })
 })

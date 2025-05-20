@@ -15,7 +15,7 @@ export function reverseWords(charArr) {
   return charArr
 }
 
-function reverseCharacters(charArr, leftIndex, rightIndex) {
+export function reverseCharacters(charArr, leftIndex, rightIndex) {
   while (leftIndex < rightIndex) {
     const temp = charArr[leftIndex]
     charArr[leftIndex] = charArr[rightIndex]

@@ -1,16 +1,19 @@
-function mergeArrays(arr1, arr2) {
+export function mergeArrays(arr1, arr2) {
   let mergedArr = []
 
   let i = 0
   let j = 0
 
-  // TODO need to also track progress in another var
   while (i <= arr1.length && j <= arr2.length) {
     if (arr1[i] < arr2[j]) {
-      mergedArr.push(arr1[i])
+      if (typeof arr1[i] !== 'undefined') {
+        mergedArr.push(arr1[i])
+      }
       i++
     } else {
-      mergedArr.push(arr2[j])
+      if (typeof arr2[j] !== 'undefined') {
+        mergedArr.push(arr2[j])
+      }
       j++
     }
   }

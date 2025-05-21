@@ -1,24 +1,46 @@
+// Merge two sorted arrays
 export function mergeArrays(arr1, arr2) {
   let mergedArr = []
 
   let i = 0
   let j = 0
+  let totalAdded = 0
 
-  while (i <= arr1.length && j <= arr2.length) {
+  while (totalAdded < arr1.length + arr2.length) {
     if (arr1[i] < arr2[j]) {
-      if (typeof arr1[i] !== 'undefined') {
-        mergedArr.push(arr1[i])
-      }
+      mergedArr.push(arr1[i])
       i++
+      totalAdded++
     } else {
-      if (typeof arr2[j] !== 'undefined') {
-        mergedArr.push(arr2[j])
-      }
+      mergedArr.push(arr2[j])
       j++
+      totalAdded++
     }
   }
 
   return mergedArr
 }
 
-console.log(mergeArrays([3, 4, 6, 10, 11, 15], [1, 5, 8, 12, 14, 19]))
+// Instead of tracking total this solution checks whether variables are undefined:
+// export function mergeArrays(arr1, arr2) {
+//   let mergedArr = []
+
+//   let i = 0
+//   let j = 0
+
+//   while (i <= arr1.length && j <= arr2.length) {
+//     if (arr1[i] < arr2[j]) {
+//       if (typeof arr1[i] !== 'undefined') {
+//         mergedArr.push(arr1[i])
+//       }
+//       i++
+//     } else {
+//       if (typeof arr2[j] !== 'undefined') {
+//         mergedArr.push(arr2[j])
+//       }
+//       j++
+//     }
+//   }
+
+//   return mergedArr
+// }

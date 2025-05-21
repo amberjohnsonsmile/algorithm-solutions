@@ -9,4 +9,20 @@ describe('mergeArrays', function () {
     const result = mergeArrays(input1, input2)
     assert.deepEqual(result, expected)
   })
+
+  it('should merge two sorted arrays of different sizes', () => {
+    const input1 = [3, 6, 11, 15]
+    const input2 = [1, 5, 8, 12, 14, 19]
+    const expected = [1, 3, 5, 6, 8, 11, 12, 14, 15, 19]
+    const result = mergeArrays(input1, input2)
+    assert.deepEqual(result, expected)
+  })
+
+  it('should merge two arrays of single items', () => {
+    const input1 = [3]
+    const input2 = [1]
+    const expected = [1, 3]
+    const result = mergeArrays(input1, input2)
+    assert.deepEqual(result, expected)
+  })
 })

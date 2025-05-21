@@ -1,4 +1,5 @@
-// Merge two sorted arrays
+// Merge two sorted arrays.
+// This solution tracks total items added:
 export function mergeArrays(arr1, arr2) {
   let mergedArr = []
 
@@ -21,7 +22,7 @@ export function mergeArrays(arr1, arr2) {
   return mergedArr
 }
 
-// Instead of tracking total this solution checks whether variables are undefined:
+// This solution tracks iterators and checks for undefined:
 // export function mergeArrays(arr1, arr2) {
 //   let mergedArr = []
 

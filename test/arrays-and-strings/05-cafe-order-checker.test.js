@@ -65,4 +65,12 @@ describe('checkOrders', function () {
     const result = checkOrders(takeOutOrders, dineInOrders, servedOrders)
     assert.equal(result, true)
   })
+
+  it('should identify an incorrect order when not everything is in servedOrders', () => {
+    const takeOutOrders = [1, 3, 5]
+    const dineInOrders = [2, 4, 6]
+    const servedOrders = [1, 2, 4, 6, 5]
+    const result = checkOrders(takeOutOrders, dineInOrders, servedOrders)
+    assert.equal(result, false)
+  })
 })

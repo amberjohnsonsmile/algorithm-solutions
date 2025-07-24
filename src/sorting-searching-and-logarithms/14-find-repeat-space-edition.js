@@ -3,6 +3,9 @@
  * Write a function to find a duplicate in an array.
  * Return the first duplicate found.
  * Don't modify the input, and optimize for saving space.
+ * 
+ * Integers are in the range i..n
+ * The array has a length of n + 1
  */
 export function findRepeat(numbers) {
   // Floor and ceiling represent the numbers themselves, that could repeat
